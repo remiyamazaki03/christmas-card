@@ -1,15 +1,9 @@
-h1 {
-  color: white;
-  margin: 0 auto;
-  margin-top: 250px;
-  text-align: center;
-  font-family: cursive;
-  letter-spacing: 7px;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: white solid;
-  max-width: 275px;
-  animation: typing 3s steps(40, end), blink-caret 0.75s step-end 10;
+:root {
+  --primary-color: #65462d;
+  --secondary-color: #fefbd4;
+  --primary-shadow: inset var(--secondary-color) 0px -1px 10px;
+  --secondary-shadow: inset var(--primary-color) 0px -1px 10px;
+  --animation: typing 3s steps(40, end), blink-caret 0.75s step-end 10;
 }
 @keyframes typing {
   from {
@@ -28,6 +22,30 @@ h1 {
     border-color: white;
   }
 }
+h1,
+p {
+  color: white;
+}
+p {
+  font-family: cursive;
+  font-weight: 600;
+  font-size: 24px;
+  text-shadow: #fc0 0px 0px 10px, var(--primary-color) 1px 1px;
+}
+.typing-animation {
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: white solid;
+  animation: var(--animation);
+}
+#envelope {
+  margin-top: 200px;
+  text-align: center;
+  font-family: cursive;
+  letter-spacing: 7px;
+  max-width: 275px;
+}
 #background-video {
   height: 100vh;
   width: 100vw;
@@ -39,24 +57,43 @@ h1 {
   bottom: 0;
   z-index: -1;
 }
-#envelope {
-  display: block;
-  margin: 0 auto;
-  margin-top: 120px;
-  width: 6rem;
-  border: #65462d solid 1px;
-  background-color: #65462d;
+.card-content-background {
+  background-image: url("images/background-still.png");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+#undraw-with-love {
+  max-width: 200px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.button {
+  padding: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
   font-family: "Times New Roman", Times, serif;
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 600;
-  color: antiquewhite;
   border-radius: 30px 10px 30px 10px;
-  box-shadow: inset #fefbd4 0px -1px 10px;
+  text-decoration: none;
+  border: var(--primary-color) solid 1px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  box-shadow: var(--primary-shadow);
+  text-align: center;
+  max-width: 160px;
+  max-height: 45px;
 }
-#envelope:hover {
-  background-color: #fefbd4;
-  color: #65462d;
-  box-shadow: inset #65462d 0px -1px 10px;
+.button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  box-shadow: var(--secondary-shadow);
   transform: scale(1.175);
+}
+.email-link {
+  color: var(--secondary-color);
+}
+#write-back {
+  max-width: 230px;
 }
